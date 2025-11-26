@@ -43,7 +43,7 @@ export default function Register() {
         };
         await profileUpdate(userProfile);
 
-        // 3. Get Token & Set Cookie (Crucial for Middleware)
+        // 3. Get Token & Set Cookie (Crucial for proxy)
         const token = await user.getIdToken();
         Cookies.set("fbToken", token, { path: "/" });
         router.push("/");
